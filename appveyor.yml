@@ -17,5 +17,5 @@ test_script:
         # In other words, if Update-MarkdownHelp changes the markdown.
         Import-Module .\Greet.psm1
         Update-MarkdownHelp -Path ./docs
-        if (git diff --name-only ) {throw 'No update found'}
+        if (git diff --name-only --ignore-cr-at-eol ) {throw 'No update found'}
         
